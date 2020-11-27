@@ -1,5 +1,5 @@
 # DesktopShortcutManger
-An app to quickly manage shortcuts from the desktop on Windows.
+An app to quickly manage shortcuts from the desktop on Windows. You can download a copy of the app on the [Releases](https://github.com/ajcolson/DesktopShortcutManger/releases) page.
 
 # Can't I already delete desktop shortcuts without an app?
 Yes, yes you probably can. This app was written to cover a verify specific use case:
