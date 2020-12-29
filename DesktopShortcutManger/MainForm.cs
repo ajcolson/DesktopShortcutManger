@@ -102,7 +102,7 @@ namespace DesktopShortcutManger
 
         private void RemoveCheckedItemsButton_Click(object sender, EventArgs e)
         {
-            for (int i = 0; i< dsm.FoundShortcuts.Count; i++)
+            for (int i = 0; i < dsm.FoundShortcuts.Count; i++)
             {
                 if (ShortcutCheckedListBox.GetItemChecked(i))
                 {
@@ -124,6 +124,11 @@ namespace DesktopShortcutManger
         private void UnselectAllItemsButton_Click(object sender, EventArgs e)
         {
             UncheckAllBoxes();
+        }
+
+        private void GitHubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/ajcolson/DesktopShortcutManger");
         }
     }
 }
