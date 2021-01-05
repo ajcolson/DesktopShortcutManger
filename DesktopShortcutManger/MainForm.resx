@@ -140,6 +140,14 @@
         vMN1g+sil2FgcwAGhOUUal7gksJi+QNGXaPoqDnhhQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="AppTitleBarCloseButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAIlJREFUWEftjkEKwCAMBP3/B32OrSULRRA1mwQPmYuIOLMlSZIZ7aXW2uRK0T0d
+        ue6BT+wIysOOYP9/aCUmcXAqM42DXalLHKzkrnEwi4TEwRgLjYN/FKc8xXFNHKc8+TNGQ0fMYiEjVhHX
+        EbtylxGnUtMRWpnJCFZC/WfjQO2xiAOMkGuS3EQpDzSSrpw/7kluAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAUAEBAAAAEAIABoBAAAVgAAABgYAAABACAAiAkAAL4EAAAgIAAAAQAgAKgQAABGDgAAMDAAAAEA

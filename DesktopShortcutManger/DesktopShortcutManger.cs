@@ -27,7 +27,7 @@ namespace DesktopShortcutManger
             string[] userDesktopShortcuts = Directory.GetFiles($"C:\\Users\\{CurrentUser}\\Desktop\\", "*.lnk");
             foreach (string path in userDesktopShortcuts)
             {
-                FoundShortcutFiles.Add(new ShortcutFile(path));
+                FoundShortcutFiles.Add(new ShortcutFile(path,$"[{CurrentUser}'s Desktop] "));
             }
 
             if (CanPublicDesktopForShortcuts)
@@ -35,7 +35,7 @@ namespace DesktopShortcutManger
                 string[] publicDesktopShortcuts = Directory.GetFiles(@"C:\Users\Public\Desktop\", "*.lnk");
                 foreach (string path in publicDesktopShortcuts)
                 {
-                    FoundShortcutFiles.Add(new ShortcutFile(path));
+                    FoundShortcutFiles.Add(new ShortcutFile(path, "[Public Desktop] "));
                 }
             }
 

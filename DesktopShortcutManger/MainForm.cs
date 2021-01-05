@@ -91,7 +91,7 @@ namespace DesktopShortcutManger
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            dsm = new DesktopShortcutManger(System.Security.Principal.WindowsIdentity.GetCurrent().Name.Split('\\')[1]);
+            dsm = new DesktopShortcutManger(Environment.UserName);
             RescanForShortcuts();
         }
 
@@ -106,8 +106,11 @@ namespace DesktopShortcutManger
             {
                 if (ShortcutCheckedListBox.GetItemChecked(i))
                 {
-                    bool deletedShortcut = dsm.FoundShortcuts[i].Delete();
-                    if (!deletedShortcut)
+                    try
+                    {
+                        dsm.FoundShortcuts[i].Delete();
+                    }
+                    catch(Exception ex)
                     {
                         MessageBox.Show($"There was a problem with deleting the shortcut called \"{ShortcutCheckedListBox.Items[i]}\". This is most likely because you attempted to delete a file that you do not have permission to delete. Please contact your system administrator about this for more assistance.", "Shortcut Not Deleted", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     }
@@ -129,6 +132,12 @@ namespace DesktopShortcutManger
         private void GitHubLinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/ajcolson/DesktopShortcutManger");
+        }
+
+        private void AppVersionLabel_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+                MoveWindowAtCursorPos();
         }
     }
 }

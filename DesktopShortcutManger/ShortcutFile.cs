@@ -9,18 +9,28 @@ namespace DesktopShortcutManger
 {
     class ShortcutFile
     {
-        public ShortcutFile(string pathToFile)
+        public ShortcutFile(string pathToFile, string displayBeforeFileName = "")
         {
             Location = pathToFile;
-
+            Name = displayBeforeFileName;
+            
             string[] pathParts = pathToFile.Split('\\');
-            Name = pathParts[pathParts.Length - 1].Split('.')[0];
+            string[] filenameParts = pathParts[pathParts.Length - 1].Split('.');
+            for (int i = 0; i < filenameParts.Length - 1; i++)
+            {
+                if (i > 0)
+                {
+                    Name += ".";
+                }
+                Name += filenameParts[i];
+            }
+                      
         }
 
         public string Location{ get; }
         public string Name { get; }
 
-        public bool Delete()
+        public void Delete()
         {
             if (File.Exists(Location))
             {
@@ -28,14 +38,12 @@ namespace DesktopShortcutManger
                 {
                     File.Delete(Location);
                 }
-                catch
+                catch (Exception ex)
                 {
-                    return false;
+                    throw;
                 }
                 
-                return true;
             }
-            else return false;
         }
     }
 }
