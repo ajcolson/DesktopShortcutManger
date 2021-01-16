@@ -43,15 +43,17 @@ namespace DesktopShortcutManger
             this.SelectAllItemsButton = new System.Windows.Forms.Button();
             this.ShortcutCheckedListBox = new System.Windows.Forms.CheckedListBox();
             this.RescanButton = new System.Windows.Forms.Button();
+            this.SystemAccountWarningLabel = new System.Windows.Forms.Label();
+            this.SystemAccountWarningPanel = new System.Windows.Forms.Panel();
             this.AppTitleBar.SuspendLayout();
             this.ViewOnGithubPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AppTitleBarIcon)).BeginInit();
             this.panel1.SuspendLayout();
+            this.SystemAccountWarningPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // AppTitleBar
             // 
-            this.AppTitleBar.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.AppTitleBar.BackColor = System.Drawing.SystemColors.Window;
             this.AppTitleBar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.AppTitleBar.Controls.Add(this.ViewOnGithubPanel);
@@ -60,6 +62,7 @@ namespace DesktopShortcutManger
             this.AppTitleBar.Controls.Add(this.AppTitleBarTextLabel);
             this.AppTitleBar.Controls.Add(this.AppTitleBarCloseButton);
             this.AppTitleBar.Controls.Add(this.panel1);
+            this.AppTitleBar.Dock = System.Windows.Forms.DockStyle.Fill;
             this.AppTitleBar.Location = new System.Drawing.Point(0, 0);
             this.AppTitleBar.Name = "AppTitleBar";
             this.AppTitleBar.Size = new System.Drawing.Size(550, 392);
@@ -106,7 +109,7 @@ namespace DesktopShortcutManger
             this.AppVersionLabel.Name = "AppVersionLabel";
             this.AppVersionLabel.Size = new System.Drawing.Size(78, 13);
             this.AppVersionLabel.TabIndex = 7;
-            this.AppVersionLabel.Text = "Version 1.2.0.0";
+            this.AppVersionLabel.Text = "Version 1.3.0.0";
             this.AppVersionLabel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.AppVersionLabel_MouseDown);
             // 
             // AppTitleBarTextLabel
@@ -140,6 +143,7 @@ namespace DesktopShortcutManger
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.SystemAccountWarningPanel);
             this.panel1.Controls.Add(this.RemoveCheckedItemsButton);
             this.panel1.Controls.Add(this.UnselectAllItemsButton);
             this.panel1.Controls.Add(this.SelectAllItemsButton);
@@ -153,7 +157,7 @@ namespace DesktopShortcutManger
             // RemoveCheckedItemsButton
             // 
             this.RemoveCheckedItemsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RemoveCheckedItemsButton.Location = new System.Drawing.Point(9, 227);
+            this.RemoveCheckedItemsButton.Location = new System.Drawing.Point(9, 215);
             this.RemoveCheckedItemsButton.Name = "RemoveCheckedItemsButton";
             this.RemoveCheckedItemsButton.Size = new System.Drawing.Size(200, 48);
             this.RemoveCheckedItemsButton.TabIndex = 3;
@@ -164,7 +168,7 @@ namespace DesktopShortcutManger
             // UnselectAllItemsButton
             // 
             this.UnselectAllItemsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnselectAllItemsButton.Location = new System.Drawing.Point(9, 173);
+            this.UnselectAllItemsButton.Location = new System.Drawing.Point(9, 161);
             this.UnselectAllItemsButton.Name = "UnselectAllItemsButton";
             this.UnselectAllItemsButton.Size = new System.Drawing.Size(200, 48);
             this.UnselectAllItemsButton.TabIndex = 6;
@@ -175,7 +179,7 @@ namespace DesktopShortcutManger
             // SelectAllItemsButton
             // 
             this.SelectAllItemsButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectAllItemsButton.Location = new System.Drawing.Point(9, 119);
+            this.SelectAllItemsButton.Location = new System.Drawing.Point(9, 107);
             this.SelectAllItemsButton.Name = "SelectAllItemsButton";
             this.SelectAllItemsButton.Size = new System.Drawing.Size(200, 48);
             this.SelectAllItemsButton.TabIndex = 5;
@@ -189,7 +193,7 @@ namespace DesktopShortcutManger
             this.ShortcutCheckedListBox.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ShortcutCheckedListBox.FormattingEnabled = true;
             this.ShortcutCheckedListBox.HorizontalScrollbar = true;
-            this.ShortcutCheckedListBox.Location = new System.Drawing.Point(215, 16);
+            this.ShortcutCheckedListBox.Location = new System.Drawing.Point(215, 5);
             this.ShortcutCheckedListBox.Name = "ShortcutCheckedListBox";
             this.ShortcutCheckedListBox.ScrollAlwaysVisible = true;
             this.ShortcutCheckedListBox.Size = new System.Drawing.Size(309, 312);
@@ -199,13 +203,36 @@ namespace DesktopShortcutManger
             // RescanButton
             // 
             this.RescanButton.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RescanButton.Location = new System.Drawing.Point(9, 65);
+            this.RescanButton.Location = new System.Drawing.Point(9, 53);
             this.RescanButton.Name = "RescanButton";
             this.RescanButton.Size = new System.Drawing.Size(200, 48);
             this.RescanButton.TabIndex = 2;
             this.RescanButton.Text = "Rescan For Shortcuts";
             this.RescanButton.UseVisualStyleBackColor = true;
             this.RescanButton.Click += new System.EventHandler(this.RescanButton_Click);
+            // 
+            // SystemAccountWarningLabel
+            // 
+            this.SystemAccountWarningLabel.AutoSize = true;
+            this.SystemAccountWarningLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SystemAccountWarningLabel.ForeColor = System.Drawing.Color.White;
+            this.SystemAccountWarningLabel.Location = new System.Drawing.Point(12, 4);
+            this.SystemAccountWarningLabel.Name = "SystemAccountWarningLabel";
+            this.SystemAccountWarningLabel.Size = new System.Drawing.Size(380, 16);
+            this.SystemAccountWarningLabel.TabIndex = 7;
+            this.SystemAccountWarningLabel.Text = "Warning! Please run this app as the SYSTEM account!";
+            this.SystemAccountWarningLabel.Click += new System.EventHandler(this.SystemAccountWarningLabel_Click);
+            // 
+            // SystemAccountWarningPanel
+            // 
+            this.SystemAccountWarningPanel.BackColor = System.Drawing.Color.Red;
+            this.SystemAccountWarningPanel.Controls.Add(this.SystemAccountWarningLabel);
+            this.SystemAccountWarningPanel.Cursor = System.Windows.Forms.Cursors.Help;
+            this.SystemAccountWarningPanel.Location = new System.Drawing.Point(64, 320);
+            this.SystemAccountWarningPanel.Name = "SystemAccountWarningPanel";
+            this.SystemAccountWarningPanel.Size = new System.Drawing.Size(404, 24);
+            this.SystemAccountWarningPanel.TabIndex = 8;
+            this.SystemAccountWarningPanel.Click += new System.EventHandler(this.SystemAccountWarningPanel_Click);
             // 
             // MainForm
             // 
@@ -227,6 +254,8 @@ namespace DesktopShortcutManger
             this.ViewOnGithubPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.AppTitleBarIcon)).EndInit();
             this.panel1.ResumeLayout(false);
+            this.SystemAccountWarningPanel.ResumeLayout(false);
+            this.SystemAccountWarningPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -246,6 +275,8 @@ namespace DesktopShortcutManger
         private System.Windows.Forms.LinkLabel GitHubLinkLabel;
         private System.Windows.Forms.Label AppVersionLabel;
         private System.Windows.Forms.Panel ViewOnGithubPanel;
+        private System.Windows.Forms.Label SystemAccountWarningLabel;
+        private System.Windows.Forms.Panel SystemAccountWarningPanel;
     }
 }
 

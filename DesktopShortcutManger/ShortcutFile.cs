@@ -38,7 +38,7 @@ namespace DesktopShortcutManger
                 {
                     File.Delete(Location);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     throw;
                 }
